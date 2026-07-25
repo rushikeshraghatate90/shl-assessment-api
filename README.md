@@ -1,338 +1,342 @@
-# SHL Assessment Recommendation API
+# 🎯 SHL Assessment Recommendation System
 
-AI-powered SHL assessment recommendation system built using FastAPI, FAISS semantic search, Sentence Transformers, and Docker.
+<p align="center">
+An AI-powered assessment recommendation platform that helps recruiters identify the most suitable <b>SHL assessments</b> using semantic search, hybrid ranking, and grounded AI recommendations.
+</p>
+
+<p align="center">
+
+<a href="https://shl-assessment-api.streamlit.app">
+<img src="https://img.shields.io/badge/🚀_Live_Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white">
+</a>
+
+<a href="https://shl-assessment-api-ekjl.onrender.com/docs">
+<img src="https://img.shields.io/badge/API-Swagger-009688?style=for-the-badge&logo=fastapi&logoColor=white">
+</a>
+
+<a href="https://shl-assessment-api-ekjl.onrender.com">
+<img src="https://img.shields.io/badge/Backend-Render-46E3B7?style=for-the-badge">
+</a>
+
+<a href="https://github.com/rushikeshraghatate90/shl-assessment-api">
+<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+</a>
+
+<a href="https://github.com/rushikeshraghatate90/shl-assessment-api/blob/main/LICENSE">
+<img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge">
+</a>
+
+</p>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white">
+<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white">
+<img src="https://img.shields.io/badge/FAISS-Semantic_Search-7B61FF?style=flat-square">
+<img src="https://img.shields.io/badge/Sentence_Transformers-all--MiniLM--L6--v2-orange?style=flat-square">
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white">
+<img src="https://img.shields.io/badge/Render-46E3B7?style=flat-square">
+<img src="https://img.shields.io/badge/Streamlit_Cloud-FF4B4B?style=flat-square">
+
+</p>
 
 ---
 
-# Overview
+# 📖 About the Project
 
-This project is designed to recommend relevant SHL assessments based on hiring requirements provided by recruiters or hiring managers.
+The **SHL Assessment Recommendation System** is an AI-powered recruitment assistant designed to help recruiters and hiring managers quickly identify the most relevant **SHL assessments** based on natural language hiring requirements.
 
-The system supports:
+Traditional keyword-based search often struggles to understand recruiter intent. This project addresses that limitation by combining **Sentence Transformer embeddings**, **FAISS semantic search**, and a **hybrid ranking algorithm** to retrieve accurate, grounded recommendations directly from the SHL assessment catalog.
 
-* Semantic search using FAISS
-* Multi-turn conversation handling
-* Grounded recommendations from SHL catalog data
-* Comparison-style queries
-* Off-topic query handling
-* Dockerized deployment
-* FastAPI REST API
-* Swagger/OpenAPI documentation
+The application supports conversational interactions, comparison queries, and role-specific recommendations while ensuring that all responses remain grounded in official SHL catalog data.
 
-The recommendations are generated only from the SHL assessment catalog to avoid hallucinated outputs.
+The system is deployed as a complete full-stack application with:
+
+- 🚀 **Frontend:** Streamlit Cloud
+- ⚡ **Backend:** FastAPI on Render
+- 🧠 **Semantic Search:** FAISS
+- 🤖 **Embeddings:** Sentence Transformers (all-MiniLM-L6-v2)
+- 🐳 **Deployment:** Docker
 
 ---
 
-# Features
+# 🌐 Live Application
 
-## Semantic Retrieval
+| Service | URL |
+|----------|-----|
+| 🚀 Live Demo | https://shl-assessment-api.streamlit.app |
+| ⚡ Backend API | https://shl-assessment-api-ekjl.onrender.com |
+| 📚 Swagger Documentation | https://shl-assessment-api-ekjl.onrender.com/docs |
+| 💻 GitHub Repository | https://github.com/rushikeshraghatate90/shl-assessment-api |
 
-Uses Sentence Transformers (`all-MiniLM-L6-v2`) with FAISS vector search for semantic matching.
+---
 
-## Hybrid Ranking
+# ✨ Features
 
-Combines:
+- 🔍 Semantic search powered by FAISS
+- 🤖 Sentence Transformer embeddings
+- 💬 Multi-turn conversational recommendations
+- 📊 Hybrid ranking combining semantic similarity and keyword matching
+- 📈 Role-based SHL assessment recommendations
+- ⚖️ Comparison queries (e.g., OPQ vs GSA)
+- ✅ Grounded retrieval from SHL catalog data
+- 🚫 Off-topic query detection
+- ⚡ FastAPI REST API
+- 🎨 Interactive Streamlit frontend
+- 🐳 Dockerized backend deployment
+- ☁️ Public deployment using Render and Streamlit Cloud
 
-* Vector similarity
-* Keyword boosts
-* Technical skill matching
-* Communication skill matching
+---
 
-for better recommendation quality.
+# 💡 Try These Queries
 
-## Stateless Multi-turn Conversations
-
-Supports conversation history through the `messages` schema.
-
-## Comparison Queries
-
-Supports comparison-style prompts such as:
-
-```text
-What is the difference between OPQ and GSA?
+```
+Hiring a Java Developer with stakeholder communication skills
 ```
 
-## Off-topic Detection
+```
+Recommend assessments for a Data Scientist
+```
 
-Rejects unrelated queries outside SHL assessment recommendations.
+```
+Hiring a Customer Support Executive
+```
 
-## Docker Support
+```
+Recommend assessments for a Python Developer
+```
 
-Fully containerized using Docker for reproducible deployment.
+```
+Looking for assessments for a Sales Manager
+```
 
----
-
-# Tech Stack
-
-| Component        | Technology            |
-| ---------------- | --------------------- |
-| Backend          | FastAPI               |
-| Semantic Search  | FAISS                 |
-| Embeddings       | Sentence Transformers |
-| Model            | all-MiniLM-L6-v2      |
-| Containerization | Docker                |
-| API Docs         | Swagger/OpenAPI       |
-| Language         | Python 3.12           |
+```
+Difference between OPQ and GSA
+```
 
 ---
 
-# Project Structure
+# 🏗️ System Architecture
+
+```
+Recruiter
+      │
+      ▼
+Streamlit Frontend
+      │
+      ▼
+FastAPI Backend
+      │
+      ▼
+Conversation Context Builder
+      │
+      ▼
+Sentence Transformer
+      │
+      ▼
+FAISS Semantic Search
+      │
+      ▼
+Hybrid Ranking
+      │
+      ▼
+Grounded SHL Recommendations
+```
+
+---
+
+# 🛠️ Technology Stack
+
+| Category | Technology |
+|-----------|------------|
+| Frontend | Streamlit |
+| Backend | FastAPI |
+| Semantic Search | FAISS |
+| Embedding Model | all-MiniLM-L6-v2 |
+| NLP | Sentence Transformers |
+| API Documentation | Swagger / OpenAPI |
+| Containerization | Docker |
+| Deployment | Render & Streamlit Cloud |
+| Programming Language | Python 3.12 |
+
+---
+
+# 📂 Project Structure
 
 ```text
 shl-assessment-api/
+
+├── Backend/
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   ├── main.py
+│   ├── retriever.py
+│   ├── build_index.py
+│   ├── prepare_catalog.py
+│   ├── catalog_metadata.pkl
+│   ├── shl_index.faiss
+│   └── README.md
 │
-├── main.py
-├── retriever.py
-├── build_index.py
-├── prepare_catalog.py
-├── app.py
-├── requirements.txt
-├── Dockerfile
-├── .gitignore
-├── clean_catalog.json
-├── catalog_metadata.pkl
-├── shl_index.faiss
+├── Frontend/
+│   ├── streamlit_app.py
+│   ├── requirements.txt
+│   └── README.md
+│
+├── LICENSE
 └── README.md
 ```
 
-## File Descriptions
-
-| File                   | Purpose                              |
-| ---------------------- | ------------------------------------ |
-| `main.py`              | FastAPI backend and API endpoints    |
-| `retriever.py`         | FAISS retrieval and ranking logic    |
-| `build_index.py`       | Generates embeddings and FAISS index |
-| `prepare_catalog.py`   | Cleans and preprocesses SHL catalog  |
-| `app.py`               | SHL catalog data collection          |
-| `catalog_metadata.pkl` | Processed metadata for retrieval     |
-| `shl_index.faiss`      | FAISS vector index                   |
-
 ---
 
-# API Endpoints
+# 🔄 Recommendation Pipeline
 
-## Root Endpoint
-
-```http
-GET /
-```
-
-Returns API status message.
-
----
-
-## Health Check
-
-```http
-GET /health
-```
-
-Returns:
-
-```json
-{
-  "status": "ok"
-}
+```text
+Recruiter Query
+       │
+       ▼
+Conversation Context Builder
+       │
+       ▼
+Sentence Transformer Embedding
+       │
+       ▼
+FAISS Vector Search
+       │
+       ▼
+Hybrid Ranking
+       │
+       ▼
+Grounded SHL Recommendations
+       │
+       ▼
+Interactive Streamlit Interface
 ```
 
 ---
 
-## Chat Endpoint
+# 📥 Clone Repository
 
-```http
-POST /chat
-```
-
-Main endpoint for assessment recommendations.
-
----
-
-# Request Schema
-
-```json
-{
-  "messages": [
-    {
-      "role": "user",
-      "content": "Hiring a Java developer with stakeholder communication skills"
-    }
-  ]
-}
-```
-
----
-
-# Example Response
-
-```json
-{
-  "reply": "Here are some recommended SHL assessments based on your hiring needs.",
-  "recommendations": [
-    {
-      "name": "Java 8 (New)",
-      "url": "https://www.shl.com/products/product-catalog/view/java-8-new/",
-      "test_type": "Knowledge & Skills"
-    }
-  ],
-  "end_of_conversation": false
-}
-```
-
----
-
-# Comparison Example
-
-## Request
-
-```json
-{
-  "messages": [
-    {
-      "role": "user",
-      "content": "What is the difference between OPQ and GSA?"
-    }
-  ]
-}
-```
-
-## Behavior
-
-Returns grounded comparison information from the SHL catalog instead of hallucinated outputs.
-
----
-
-# Local Setup
-
-## Clone Repository
+Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/shl-assessment-api.git
+git clone https://github.com/rushikeshraghatate90/shl-assessment-api.git
+```
+
+Navigate into the project directory:
+
+```bash
 cd shl-assessment-api
 ```
 
 ---
 
-## Install Dependencies
+# ⚙️ Run Locally
+
+## Backend
 
 ```bash
+cd Backend
+
 pip install -r requirements.txt
-```
 
----
-
-## Run API
-
-```bash
 uvicorn main:app --reload
 ```
 
----
+Backend will be available at:
 
-## Open Swagger Docs
+```
+http://127.0.0.1:8000
+```
 
-```text
+Swagger Documentation:
+
+```
 http://127.0.0.1:8000/docs
 ```
 
 ---
 
-# Docker Setup
-
-## Build Docker Image
+## Frontend
 
 ```bash
-docker build -t shl-api .
+cd Frontend
+
+pip install -r requirements.txt
+
+streamlit run streamlit_app.py
 ```
 
 ---
 
-## Run Docker Container
+# 📡 API Endpoints
 
-```bash
-docker run -p 8000:8000 shl-api
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| GET | `/` | API Status |
+| GET | `/health` | Health Check |
+| POST | `/chat` | Assessment Recommendation |
+
+Example Request
+
+```json
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hiring a Java Developer with stakeholder communication skills"
+    }
+  ]
+}
 ```
 
 ---
 
-## Open API Docs
+# 🚀 Deployment
 
-```text
-http://127.0.0.1:8000/docs
-```
+### Frontend
 
----
+Streamlit Cloud
 
-# Retrieval Pipeline
+https://shl-assessment-api.streamlit.app
 
-The recommendation workflow:
+### Backend
 
-```text
-User Query
-   ↓
-FastAPI Backend
-   ↓
-Conversation Context Builder
-   ↓
-Sentence Transformer Embedding
-   ↓
-FAISS Semantic Search
-   ↓
-Hybrid Ranking
-   ↓
-Structured API Response
-```
+Render
+
+https://shl-assessment-api-ekjl.onrender.com
+
+### API Documentation
+
+https://shl-assessment-api-ekjl.onrender.com/docs
 
 ---
 
-# Design Decisions
+# 🔮 Future Improvements
 
-## Grounded Retrieval
-
-Recommendations are generated only from SHL catalog data to reduce hallucinations.
-
-## Hybrid Ranking
-
-Semantic similarity alone was insufficient for technical role matching, so additional keyword boosting was introduced.
-
-## Stateless Conversations
-
-Conversation context is reconstructed from incoming message history instead of storing server-side state.
-
-## Docker Deployment
-
-Docker was used to ensure reproducible deployment and consistent runtime behavior.
+- Large Language Model generated explanations
+- Advanced reranking models
+- Streaming responses
+- User authentication
+- Analytics dashboard
+- Conversation persistence
+- Cloud vector database integration
+- Performance benchmarking
 
 ---
 
-# Future Improvements
+# 👨‍💻 Author
 
-Potential future enhancements:
+**Rushikesh Raghatate**
 
-* LLM-generated explanations
-* Advanced reranking models
-* Better comparison extraction
-* Caching layer
-* Evaluation metrics dashboard
-* Cloud vector database integration
+B.Tech in Artificial Intelligence Engineering
 
----
+GitHub: https://github.com/rushikeshraghatate90
 
-# Public Deployment
-
-Example deployment:
-
-```text
-https://your-render-url.onrender.com/docs
-```
+LinkedIn: https://www.linkedin.com/in/rushikesh-raghatate/
 
 ---
 
-# Author
+# 📄 License
 
-Rushikesh Raghatate
-
----
-
-# License
-
-This project is intended for educational and assessment purposes.
+This project is licensed under the **MIT License**.
